@@ -1,0 +1,8 @@
+{
+  "BVMS": {
+    "IP": "1.1.1.1",
+    "Username": "x",
+    "Password": "x",
+    "Prefix":  "Verhaeg.IoT.BVMS"
+  }
+}

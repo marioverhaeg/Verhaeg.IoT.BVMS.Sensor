@@ -1,0 +1,6 @@
+{
+  "Serilog": {
+    "MinimumLevel": "Debug",
+    "Using": [ "Serilog.Sinks.Console", "Serilog.Sinks.File" ]
+  }
+}
