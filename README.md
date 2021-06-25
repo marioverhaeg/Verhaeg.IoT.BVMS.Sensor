@@ -7,7 +7,7 @@ Verhaeg.IoT.BVMS.Sensor connects these two systems: BVMS events and alarms are p
 This service allows other services to subscribe to BVMS events using websocket or get the status of BVMS using REST calls.
 
 # Deployment
-For now, just copy the files includes in this Github to a directory of your choice. You can easily deploy the service using the commandline:
+The BVMS SDK needs to be installed in the system where you run this service. The BVMS SDK is part of the BVMS set-up package. To deploy the service, for now, just copy the files includes in this Github to a directory of your choice. You can easily deploy the service using the commandline:
 
 ```
 cd C:\Windows\Microsoft.NET\Framework[64]\[version]
