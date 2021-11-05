@@ -7,28 +7,35 @@ namespace Verhaeg.IoT.Configuration
 {
     public class Device: Generic
     {
-
         public Device(string path, string type): base(path, type)
         {
 
         }
-
-        public System.Uri URI()
+        public System.Uri uri
         {
-            Log.Debug("Returning URI: " + conf.GetValue<string>(type + ":URI"));
-            return new Uri(conf.GetValue<string>(type + ":URI"), UriKind.Absolute);
+            get
+            {
+                Log.Debug("Returning URI: " + conf.GetValue<string>(type + ":URI"));
+                return new Uri(conf.GetValue<string>(type + ":URI"), UriKind.Absolute);
+            }
         }
 
-        public string Username()
+        public string username
         {
-            Log.Debug("Returning Username...");
-            return conf.GetValue<string>(type + ":Username");
+            get
+            {
+                Log.Debug("Returning Username...");
+                return conf.GetValue<string>(type + ":Username");
+            }
         }
 
-        public string Password()
+        public string password
         {
-            Log.Debug("Returning Password...");
-            return conf.GetValue<string>(type + ":Password");
+            get
+            {
+                Log.Debug("Returning Password...");
+                return conf.GetValue<string>(type + ":Password");
+            }
         }
     }
 }

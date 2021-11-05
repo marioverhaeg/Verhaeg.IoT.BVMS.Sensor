@@ -41,7 +41,5 @@ namespace Verhaeg.IoT.Configuration
                 Log.Fatal(ex.ToString());
             }
         }
-
-        
     }
 }

@@ -20,7 +20,7 @@ namespace Verhaeg.IoT.BVMS.Sensor.Managers
 
         // Connection
         private RemoteServerApi rsa;
-        private State.Alarm am;
+        private State.BVMS.Alarm am;
 
         private AlarmManager([System.Runtime.CompilerServices.CallerMemberName] string memberName = "") : base("AlarmManager")
         {
@@ -38,7 +38,7 @@ namespace Verhaeg.IoT.BVMS.Sensor.Managers
             Log.Debug("Trying to connect to BVMS server.");
             try
             {
-                rsa = new RemoteServerApi(bvms_configuration.IP() + ":5390", bvms_configuration.Username(), bvms_configuration.Password());
+                rsa = new RemoteServerApi(bvms_configuration.IP() + ":5390", bvms_configuration.username, bvms_configuration.password);
                 rsa.ConnectionLostEvent += Rsa_ConnectionLostEvent;
                 Log.Debug("Connection established.");
                 if (Subscribe())
@@ -63,7 +63,7 @@ namespace Verhaeg.IoT.BVMS.Sensor.Managers
             Log.Debug("Trying to subscribe to BVMS events.");
             try
             {
-                am = new State.Alarm();
+                am = new State.BVMS.Alarm();
                 rsa.AlarmManager.Register(am);
                 Log.Debug("Subscription succeeded.");
                 return true;

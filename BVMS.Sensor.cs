@@ -15,6 +15,7 @@ namespace Verhaeg.IoT.BVMS.Sensor
     public partial class Service : ServiceBase
     {
         private Serilog.ILogger Log;
+        private Configuration.Ditto.WebSocket cdw;
 
         public Service()
         {
@@ -28,11 +29,16 @@ namespace Verhaeg.IoT.BVMS.Sensor
             Managers.EventManager.Instance().GetInitialStates();
             Log.Information("Starting AlarmManager.");
             Managers.AlarmManager.Instance();
+            Log.Information("Retrieving Alarm states from Ditto.");
+            cdw = Configuration.Ditto.WebSocket.Instance(
+                System.AppDomain.CurrentDomain.BaseDirectory + "Configuration" + System.IO.Path.AltDirectorySeparatorChar + "Ditto_WS.json");
+            State.Ditto.InputState.Instance(cdw);
         }
 
         protected override void OnStop()
         {
             Log.Information("Stopping BVMS.Sensor.");
+            State.Ditto.InputState.Instance(cdw).Stop();
             Managers.EventManager.Instance().Disconnect();
             Managers.EventManager.Instance().Stop();
             Managers.AlarmManager.Instance().Disconnect();

@@ -1,0 +1,7 @@
+{
+  "Ditto_WS": {
+    "URI": "ws://x.x.x.x:8080/ws/2",
+    "Username": "x",
+    "Password": "x"
+  }
+}

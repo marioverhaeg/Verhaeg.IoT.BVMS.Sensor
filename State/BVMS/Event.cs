@@ -8,7 +8,7 @@ using Serilog;
 
 using Bosch.Vms.SDK;
 
-namespace Verhaeg.IoT.BVMS.Sensor.State
+namespace Verhaeg.IoT.BVMS.Sensor.State.BVMS
 {
     public class Event : EventReceiver
     {

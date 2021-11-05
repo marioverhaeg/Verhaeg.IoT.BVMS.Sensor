@@ -17,7 +17,7 @@ namespace Verhaeg.IoT.BVMS.Sensor
         {
             //while (!Debugger.IsAttached)
             //{
-            //    System.Threading.Thread.Sleep(1000);
+             //   System.Threading.Thread.Sleep(1000);
             //}
 
             ServiceBase[] ServicesToRun;
